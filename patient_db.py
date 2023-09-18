@@ -1,3 +1,9 @@
+"""
+    Name, mrn, age, tests
+    
+    ex: ["Ann Ables", 101 35, []]
+"""
+
 db = []
 def create_db_entry(patient_name, mrn, age):
    new_patient = [patient_name, mrn, age, []]
