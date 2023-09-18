@@ -10,8 +10,9 @@ def create_db_entry(patient_name, mrn, age):
    return new_patient
 
 def printdb():
-    for p in db:
-        print("Name: {}, MRN: {}, Age: {}".format(p[0], p[1], p[2]))
+    rooms = ["A3", "B1", "C2"]
+    for i, p in enumerate(db):
+        print("Name: {}, MRN: {}, Age: {}, Room: {}".format(p[0], p[1], p[2], rooms[i]))
 
 def main():
     db.append(create_db_entry("Ann Ables", 101, 35))
