@@ -21,9 +21,20 @@ def main():
     db.append(create_db_entry("Bob Boyles", 102, 64))
     db.append(create_db_entry("Chris Chou", 103, 23))
     print(db)
+
+def find_patient(mrn):
+    answer = []
+    for p in db:
+        if p[1] == mrn:
+            answer = p
+    if answer == []:
+        print("Patient not found.")
+    else:
+        print(answer)
     
 if __name__ == "__main__":
     main()
     printdb()
+    find_patient(102)
 
     
