@@ -30,7 +30,7 @@ def find_patient(mrn):
             ind = i
     if answer == []:
         print("Patient not found.")
-        ind = -1
+        ind = -1 
     else:
         return ind, answer
         
