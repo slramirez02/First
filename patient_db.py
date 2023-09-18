@@ -24,17 +24,26 @@ def main():
 
 def find_patient(mrn):
     answer = []
-    for p in db:
+    for i, p in enumerate(db):
         if p[1] == mrn:
             answer = p
+            ind = i
     if answer == []:
         print("Patient not found.")
+        ind = -1
     else:
-        print(answer)
+        return ind, answer
+        
+def add_testresult(mrn, test_name, test_result):
+    patient_ind = find_patient(mrn)[0]
+    db[patient_ind][3].append((test_name, test_result))
+    print(db)
+    
     
 if __name__ == "__main__":
     main()
     printdb()
     find_patient(102)
+    add_testresult(102, "weight", "125")
 
     
