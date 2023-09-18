@@ -13,6 +13,8 @@ def printdb():
     rooms = ["A3", "B1", "C2"]
     for i, p in enumerate(db):
         print("Name: {}, MRN: {}, Age: {}, Room: {}".format(p[0], p[1], p[2], rooms[i]))
+    for room, p, in zip(rooms, db):
+        print("Name: {}, MRN: {}, Age: {}, Room: {}".format(p[0], p[1], p[2], room))
 
 def main():
     db.append(create_db_entry("Ann Ables", 101, 35))
