@@ -4,7 +4,7 @@
     ex: ["Ann Ables", 101 35, []]
 """
 
-db = []
+db = {}
 def create_db_entry(firstName, lastName, mrn, age):
    new_patient = {
    "First Name" : firstName, 
@@ -15,7 +15,7 @@ def create_db_entry(firstName, lastName, mrn, age):
    return new_patient
 
 def printdb():
-    for patient in db:
+    for patient in db.values():
         print("Name: {}, MRN: {}, Age: {}"
             .format(get_fullname(patient),
                     patient["MRN"],
@@ -32,17 +32,18 @@ def get_fullname(patient):
     return "{} {}".format(patient["First Name"],
                           patient["Last Name"])
 def main():
-    db.append(create_db_entry("Ann", "Ables", 101, 35))
-    db.append(create_db_entry("Bob", "Boyles", 102, 64))
-    db.append(create_db_entry("Chris", "Chou", 103, 23))
+    db[101] = create_db_entry("Ann", "Ables", 101, 35)
+    db[102] = create_db_entry("Bob", "Boyles", 102, 64)
+    db[103] = create_db_entry("Chris", "Chou", 103, 23)
     #print(db)
 
 def find_patient(mrn):
     answer = False
-    for patient in db:
+    for patient in db.values():
         if patient["MRN"] == mrn:
             answer = patient
             break
+    print(answer)
     return answer
     '''
     for i, p in enumerate(db):
@@ -73,8 +74,8 @@ def minor_or_adult(patient):
     
 if __name__ == "__main__":
     main()
-    #find_patient(102)
     add_test_to_patient(102, "weight", "125")
+    find_patient(102)
     printdb()
 
     
