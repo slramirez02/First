@@ -7,12 +7,10 @@ from patient_db_class import Patient
 
 db = []
 def create_db_entry(firstName, lastName, mrn, age):
-   new_patient = Patient()
-   new_patient.first_name = firstName
-   new_patient.last_name = lastName
-   new_patient.mrn = mrn
-   new_patient.age = age
-   
+   new_patient = Patient(firstName,
+                         lastName,
+                         mrn,
+                         age)
    return new_patient
 
 def printdb():
