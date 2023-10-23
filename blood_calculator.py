@@ -14,7 +14,7 @@ def HDL_input():
 def HDL_analysis(HDL):
     if HDL >= 60:
         return "Normal"
-    elif 40 <= HDl <= 60:
+    elif 40 <= HDL <= 60:
         return "Borderline Low"
     else:
         return "Low"
@@ -23,8 +23,9 @@ def HDL_output(HDL_value, HDL_result):
     print("The HDL value of {} is {}.".format(HDL_value, HDL_result))
     
 def HDL_driver():
-    value = HDL_input():
+    value = HDL_input()
     result = HDL_analysis(value)
     HDL_output(value, result)
 
-interface()
+if __name__ == "__main__":
+    interface()
