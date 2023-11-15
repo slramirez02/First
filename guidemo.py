@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import messagebox
+from tkinter import messagebox, filedialog
 
 def main_window():
 
@@ -15,6 +15,9 @@ def main_window():
     def button_cmd():
         messagebox.askyesno("Verification of Action",
                             "Are you sure you want blinking letters?")
+        filename = filedialog.askopenfilename()
+        if filename == "":   # canceled
+            return
         label.configure(foreground="red")
         root.after(1000, swap_colors)
 
