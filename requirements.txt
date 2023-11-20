@@ -2,3 +2,6 @@ pytest
 requests
 flask
 pytest-pycodestyle
+Pillow
+jupyter
+matplotlib

@@ -1,6 +1,16 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox, filedialog
+from PIL import Image, ImageTk
+
+
+def tk_img_from_filename(filename):
+    pil_img = Image.open(filename)
+    size = pil_img.size
+    pil_img = pil_img.resize((150,150))
+    tk_image = ImageTk.PhotoImage(pil_img)
+    return tk_image
+
 
 def main_window():
 
@@ -30,6 +40,10 @@ def main_window():
 
     button = ttk.Button(root, text="Ok", command=button_cmd)
     button.grid(column=0, row=1)
+
+    tk_img = tk_img_from_filename("Images/img.png")
+    image_label = ttk.Label(root, image=tk_img)
+    image_label.grid(column=0, row=2)
 
     root.mainloop()
 
